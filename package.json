@@ -1,0 +1,27 @@
+{
+  "name": "museum_api",
+  "version": "1.0.0",
+  "description": "api for my museum application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuasoave/museum_api.git"
+  },
+  "author": "joshua soave",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshuasoave/museum_api/issues"
+  },
+  "homepage": "https://github.com/joshuasoave/museum_api#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.24"
+  }
+}
