@@ -17,6 +17,15 @@ router.post('/', (req, res) => {
   })
 });
 
+////////////////////////////
+//get by user id for favorite page
+//////////////////////////
+router.get('/favorites/:id', (req, res) => {
+  //use the id to find and the user and send back only their favorites
+  Users.findById(req.params.id, 'favorites', (err, userFavorites) => {
+    res.json(userFavorites)
+  })
+})
 
 ////////////
 //Get user by id
