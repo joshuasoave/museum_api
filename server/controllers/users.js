@@ -27,14 +27,11 @@ router.get('/', (req, res) => {
   })
 })
 
-router.put('/:id/remove', () => {
-
-})
 
 ////////////////////////////
 //Update user favorites
 //////////////////////////
-router.put('/:id', (req, res) => {
+router.put('/exhibit/:id', (req, res) => {
   //use the exhibit id from the page link
   Artifacts.findById(req.params.id, (err, foundArtifact) => {
     //can log the found artifact
