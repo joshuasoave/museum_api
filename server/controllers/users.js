@@ -44,12 +44,13 @@ router.get('/', (req, res) => {
 router.put('/exhibit/remove/:index', (req, res) => {
   //find the current user
   Users.findById(req.session.user._id, (err, foundUser) => {
+      //save current favorites array
+      let currentFavs = foundUser.favorites
     //splice from the found user array at index passed in
-    foundUser.favorites.splice(req.params.index, 1)
-    //used the save feature to update the array after object was removed
-    //https://mongoosejs.com/docs/api.html#model_Model-save
-    foundUser.save((error, data) => {
-      res.json(data)
+      currentFavs.splice(req.params.index, 1)
+    //used the newly spliced array and pass it into the update method
+    Users.findByIdAndUpdate(req.session.user._id, {favorites: currentFavs}, (err, updatedUser) => {
+      res.json(updatedUser)
     })
   })
 })
