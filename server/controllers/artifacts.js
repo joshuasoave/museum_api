@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
 ///////////
 //Get by id
 //////////
-route.get('/exhibit/:id', (req, res) => {
+router.get('/exhibit/:id', (req, res) => {
   Artifacts.findById(req.params.id, (err, foundArtifact) => {
     res.json(foundArtifact);
   })
