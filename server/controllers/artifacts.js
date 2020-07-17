@@ -12,6 +12,17 @@ router.post('/', (req, res) => {
   });
 });
 
+///////////////
+//Get By Theme
+//////////////
+router.get('/:theme', (req, res) => {
+  Artifacts.find({theme: req.params.theme}, (err, egyptArtifacts) => {
+    res.json(egyptArtifacts)
+  })
+})
+
+
+
 ////
 //seed
 ////
@@ -19,6 +30,7 @@ router.get('/seed', (req, res) => {
   Artifacts.create(artifactSeed)
   res.redirect('/artifacts')
 });
+
 
 /////////
 //Get

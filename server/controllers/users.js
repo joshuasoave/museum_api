@@ -46,8 +46,8 @@ router.put('/:id', (req, res) => {
         foundUser.favorites.push(foundArtifact)
       //used the save feature to keep the object in user favorite array
       //https://mongoosejs.com/docs/api.html#model_Model-save
-      foundUser.save((error, data) => {
-        res.json(data)
+        foundUser.save((error, data) => {
+          res.json(data)
       })
     })
   })
