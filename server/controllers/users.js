@@ -17,15 +17,16 @@ router.post('/', (req, res) => {
   })
 });
 
-////////////
-//Get user by id
-//////////
-router.get('/:id', (req, res) => {
-  //use the session to grab current users id
-  Users.findById(req.session.user._id, (err, foundUser) => {
-    res.json(foundUser)
-  })
-})
+//
+// ////////////
+// //Get user by id
+// //////////
+// router.get('/:id', (req, res) => {
+//   //use the session to grab current users id
+//   Users.findById(req.session.user._id, (err, foundUser) => {
+//     res.json(foundUser)
+//   })
+// })
 
 
 ///////////
