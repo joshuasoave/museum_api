@@ -12,15 +12,23 @@ router.post('/', (req, res) => {
   });
 });
 
+///////////
+//Get by id
+//////////
+route.get('/exhibit/:id', (req, res) => {
+  Artifacts.findById(req.params.id, (err, foundArtifact) => {
+    res.json(foundArtifact);
+  })
+})
+
 ///////////////
 //Get By Theme
 //////////////
 router.get('/:theme', (req, res) => {
   Artifacts.find({theme: req.params.theme}, (err, egyptArtifacts) => {
-    res.json(egyptArtifacts)
+    res.json(egyptArtifacts);
   })
 })
-
 
 
 ////
@@ -28,7 +36,7 @@ router.get('/:theme', (req, res) => {
 ////
 router.get('/seed', (req, res) => {
   Artifacts.create(artifactSeed)
-  res.redirect('/artifacts')
+  res.redirect('/artifacts');
 });
 
 
