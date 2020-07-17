@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
 //////////
 router.get('/:id', (req, res) => {
   //use the session to grab current users id
-  Users.findById(req.session.user._id, (err, foundUser) => {
+  Users.findById(req.params.id, (err, foundUser) => {
     res.json(foundUser)
   })
 })
