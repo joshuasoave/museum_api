@@ -21,6 +21,14 @@ router.get('/exhibit/:id', (req, res) => {
   })
 })
 
+////
+//seed
+////
+router.get('/seed', (req, res) => {
+  Artifacts.create(artifactSeed)
+  res.redirect('/artifacts');
+});
+
 ///////////////
 //Get By Theme
 //////////////
@@ -29,15 +37,6 @@ router.get('/:theme', (req, res) => {
     res.json(egyptArtifacts);
   })
 })
-
-
-////
-//seed
-////
-router.get('/seed', (req, res) => {
-  Artifacts.create(artifactSeed)
-  res.redirect('/artifacts');
-});
 
 
 /////////
