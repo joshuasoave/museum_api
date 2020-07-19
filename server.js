@@ -3,6 +3,7 @@
 /////////////
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const mongoose = require('mongoose')
 const db = mongoose.connection;
 const session = require('express-session');
