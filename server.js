@@ -41,10 +41,11 @@ const sessionController = require('./server/controllers/session.js');
 //////////
 //middleware
 /////////
-app.use(cors({
-  origin:['https://rufus-museum.herokuapp.com'],
-  methods: ['GET', 'POST', 'DELETE', 'PUT']
-}));
+app.use(cors());
+// app.use(cors({
+//   origin:['https://rufus-museum.herokuapp.com'],
+//   methods: ['GET', 'POST', 'DELETE', 'PUT']
+// }));
 app.use(express.json());
 app.use(session({
   secret: process.env.SECRET,
