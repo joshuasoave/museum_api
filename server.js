@@ -42,7 +42,7 @@ const sessionController = require('./server/controllers/session.js');
 //middleware
 /////////
 app.use(cors({
-  origin:['https://rufus-museum.herokuapp.com/'],
+  origin:['https://rufus-museum.herokuapp.com'],
   methods: ['GET', 'POST', 'DELETE', 'PUT']
 }));
 app.use(express.json());
